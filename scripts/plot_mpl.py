@@ -1,0 +1,1 @@
+df.plot(figsize=(12, 4), legend=False);

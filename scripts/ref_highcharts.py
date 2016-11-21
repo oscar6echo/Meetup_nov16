@@ -1,0 +1,1 @@
+IFrame('http://www.highcharts.com/stock/demo/compare', width='100%', height=600)

@@ -1,0 +1,41 @@
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+<script src='http://d3js.org/d3.v3.min.js' charset='utf-8'></script>
+
+<div style="width: 100%; text-align: center;">
+
+<div class="btn-group controls" style="display: inline-block;">
+    <a class="btn btn-default btn-sm" id="backward"><i class="glyphicon glyphicon-chevron-left"></i></a>
+    <a class="btn btn-default btn-sm" id="stop"><i class="glyphicon glyphicon-stop"></i></a>
+    <a class="btn btn-default btn-sm" id="forward"><i class="glyphicon glyphicon-chevron-right"></i></a>
+    <a class="btn btn-default btn-sm" id="slower"><i class="glyphicon glyphicon-minus"></i></a>
+    <a class="btn btn-default btn-sm" id="resetspeed"><i class="glyphicon glyphicon-remove"></i></a>
+    <a class="btn btn-default btn-sm" id="faster"><i class="glyphicon glyphicon-plus"></i></a>
+</div>
+<br/>
+<div class="btn-group controls" style="display: inline-block;">
+    <input type="text" class="btn btn-default btn-sm" title="Input a number" id="inputNumber" />
+    <a class="btn btn-default btn-sm" id="search"><i class="glyphicon glyphicon-search"></i></a>
+</div>
+<div id="number"></div>
+<div id="vis"></div>
+
+</div>
+
+<script>
+    vis = {
+        size: 950,
+        number: 0,
+        speedinit: 2500,
+        speed: 1000,
+        ratio: 1/5,
+        way: 1
+    };
+    setTimeout(function(){
+        console.log('d3.version = '+d3.version);
+        clearInterval(window.interval);
+        init();
+        window.interval = setInterval(update, vis.speed, 1);            
+    }, 1000);
+</script>
